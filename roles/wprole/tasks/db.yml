@@ -1,0 +1,30 @@
+---
+- name: create db and users
+  hosts: web
+  tasks:
+    - block:
+        - name: install maria db
+          yum:
+                  name: mariadb-server
+                  state: present
+        - name: start the service
+          service:
+                  name: mariadb
+                  state: started
+        - name: install
+          command: "pip3 install  pymysql"
+
+        - name: create the db
+          mysql_db:
+                    name: wordpress
+                    state: present
+          register: thisone
+        - name: create the db user
+          mysql_user:
+                  name: wordpress
+                  password: wordpress
+                  priv: '*.*:ALL'
+                  state: present
+      rescue:     
+        - debug:
+                var: thisone
