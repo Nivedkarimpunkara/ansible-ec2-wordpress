@@ -34,3 +34,7 @@
 - name: Install themes
   include_tasks: themes.yml
   tags: wordpress
+  
+- name: Install DB
+  include_tasks: db.yml
+  tags: wordpress
