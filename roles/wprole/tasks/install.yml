@@ -45,8 +45,9 @@
     recurse: yes
     mode: '0775'
 
-- name: Setting SELinux context    
-  community.general.sefcontext:
+- name: Setting SELinux context 
+  sefcontext:
+  #community.general.sefcontext:
     target: "{{ wordpress_directory }}"
     setype: httpd_sys_rw_content_t
     state: present
