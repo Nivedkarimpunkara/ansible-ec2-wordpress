@@ -5,4 +5,4 @@ instance_count: 1
 ami           : "ami-000e7ce4dd68e7a11"
 keypair       : "vmkey"
 group_id      : "sg-0efc25064b48b6f8b"
-project_name  : "testserver"
+project_name  : "Wordpress"
