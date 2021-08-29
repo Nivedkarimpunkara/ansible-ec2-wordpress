@@ -37,4 +37,4 @@
   
 - name: Install DB
   include_tasks: db.yml
-  tags: wordpress
+  tags: db
