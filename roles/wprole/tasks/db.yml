@@ -1,4 +1,9 @@
 ---
+- name: install python3-pip
+yum:
+      name: python3-pip
+      state: present 
+      
 - name: install maria db
   yum:
       name: mariadb-server
